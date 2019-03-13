@@ -1,0 +1,266 @@
+import java.lang.Math;
+import java.util.Scanner;
+
+public class Javcalculator{
+
+	public static void main(String[] args) {
+		
+		 Scanner Scan = new Scanner(System.in);
+		 String StandardOrscientific;
+		 String operators;
+		 int maxNum;
+		 int Num = 1;
+		 double yourNum;
+		 double Ad = 0;
+		 double sub = 0 ;
+		 double div = 0;
+		 double mult = 1.0;
+		 String y_or_n;
+		 double thatnumber;
+		 
+		 
+		 do {
+		 
+		 System.out.println("Enter the calculator mode: Standard/Scientific?");
+		 StandardOrscientific = Scan.next();
+		 
+		
+	       
+	        	if(StandardOrscientific.equalsIgnoreCase("Standard")){
+	        		 System.out.println("The calculator will operate in standard mode.");
+	        		 System.out.println("Enter '+' for addition, '-' for subtractions, '*' for multiplication, '/' for division");
+	        		 operators = Scan.next();
+	        		
+	        		for(int i = 0;i < Num;i++ ) {
+	        			
+	        			
+	        			if(operators.equals("+")) {
+	        				
+	        				 System.out.println("How many numbers do you want to add?");
+	        				 maxNum = Scan.nextInt();	
+	        				 System.out.println("Enter " +  maxNum + " numbers");
+	        				for(int a = 0;a < maxNum;a++ ) {
+	        					
+	        					
+	        					yourNum = Scan.nextDouble();
+	        					 Ad += yourNum;  
+	        				}
+	        				System.out.println("Result:" + Ad);
+	        				 Ad = 0;  
+	        			}
+	        			
+	        			
+	        			else if(operators.equals("-")) {
+	        				 
+	        				 System.out.println("How many numbers do you want to subtract?");
+	        				 maxNum = Scan.nextInt();	        				
+	        				 System.out.println("Enter " +  maxNum + " numbers");
+	        				 sub = Scan.nextDouble();
+		        				for(int s = 1;s < maxNum;s++ ) {
+		        					
+		        					
+		        					yourNum = Scan.nextDouble();
+		        					 sub = sub - yourNum;  
+	        				
+	        			}
+		        				System.out.println("Result:"+ sub  );
+		        				sub = 0;  
+	        				}
+	        			
+	        			
+	        			else if(operators.equals("*")) {
+	        				
+	        				 System.out.println("How many numbers do you want to multiply?");
+	        				 maxNum = Scan.nextInt();
+	        				 System.out.println("Enter " +  maxNum + " numbers");
+	        					for(int m = 0;m < maxNum;m++ ) {
+	        						
+	        					
+	        					yourNum = Scan.nextDouble();
+	        					 mult *= yourNum;  
+	        					   
+	        			}
+	        				
+	        					System.out.println("Result:" + mult );
+	        					mult = 1;
+	        			}
+	        			else if(operators.equals("/")) {
+	        				
+	        				 System.out.println("How many numbers do you want to divide?");
+	        				 maxNum = Scan.nextInt();
+	        				 System.out.println("Enter " +  maxNum + " numbers");
+	        				 div = Scan.nextDouble();
+	        				for(int d = 1;d < maxNum;d++ ) {
+	        					
+	        					
+	        					
+	        					yourNum = Scan.nextDouble();
+	        					div /= yourNum;
+	        					 
+	        					
+
+	        				
+	        			}
+	        				
+	        				 System.out.println("Result:" + div);
+	        				 div = 0;
+	        			
+	        			}else {
+	        				 System.out.println("Invalid operation entered");
+	        			}
+
+	        			//The Standard edition of the code finish here and begin the scientific below. 	        			
+	        			
+	        																				
+	        		}
+	        		
+	        	}
+	        	else if(StandardOrscientific.equalsIgnoreCase("Scientific")){
+	        		for(int i = 0;i < Num;i++ ) {
+	        			
+	        			 System.out.println("Enter '+' for addition, '-' for subtractions, '*' for multiplication, '/' for division, 'sin' for sin x, 'cos' for cos x, 'tan' for tan x:");
+	        			 operators = Scan.next();
+	        			 
+	        	      
+	        	        			if(operators.equals("+")) {
+	        	        				
+	        	        				 System.out.println("How many numbers do you want to add?");
+	        	        				 maxNum = Scan.nextInt();
+	        	        				 System.out.println("Enter " +  maxNum + " numbers");	        	        				 
+	        	        				for(int a = 0;a < maxNum;a++ ) {
+	        	        					
+	        	        					
+	        	        					yourNum = Scan.nextDouble();
+	        	        					 Ad += yourNum;  
+	        	        					 
+	        	        				}
+	        	        				
+	        	        				System.out.println("Result:" + Ad);
+	        	        				Ad = 0;
+	        	        			}
+	        	        			
+	        	        			
+	        	        			else if(operators.equals("-")) {
+	        	        				
+	        	        				 System.out.println("How many numbers do you want to subtract?");
+	        	        				 maxNum = Scan.nextInt();
+	        	        				 System.out.println("Enter " +  maxNum + " numbers");
+	        	        				 sub = Scan.nextDouble();
+	        	        				 
+	        		        				for(int s = 1;s < maxNum;s++ ) {
+	        		        					
+	        		        					
+	        		        					yourNum = Scan.nextDouble();  		        					
+	        		        					 sub = sub - yourNum;  
+	        		        					 
+	        	        			}
+	        		        				
+	        		        				System.out.println("Result: " + sub);
+	        		        				sub = 0;
+	        	        				}
+	        	        			
+	        	        			
+	        	        			else if(operators.equals("*")) {
+	        	        				 System.out.println("How many numbers do you want to multiply?");
+	        	        				 maxNum = Scan.nextInt();
+	        	        				 System.out.println("Enter " +  maxNum + " numbers");
+	        	        					for(int m = 0;m < maxNum;m++ ) {
+	        	        						
+	        	        						
+	        	        						yourNum = Scan.nextDouble(); 	        					
+	        		        					mult *= yourNum;  
+	        	        					 	        	        						        	        				
+	        	        			}
+	        	        				
+	        	        					System.out.println("Result:" + mult );
+	        	        					mult = 1;
+	        	        			}
+	        	        			
+	        	        			else if(operators.equals("/")) {
+	        	        				
+	        	        				 System.out.println("How many numbers do you want to divide?");
+	        	        				 maxNum = Scan.nextInt();
+	        	        				 System.out.println("Enter " +  maxNum + " numbers");
+	        	        				 div = Scan.nextDouble();
+	        	        				for(int d = 1;d < maxNum;d++ ) {
+	        	        					
+	        	        					
+	        	        					yourNum = Scan.nextDouble();	        	        					
+	        	        					div /= yourNum;   
+	        	        					 
+	        	        					
+
+	        	        				
+	        	        			}
+	        	        				
+	        	        				
+	       	        				 System.out.println("Result:" + div);
+	       	        				div = 0;
+	        	        			}else if(operators.equalsIgnoreCase("sin")) {
+	        	        				
+	        	        				
+									for(int sin = 0;sin < 1;sin++ ) {
+										
+										System.out.println("Enter a number in radians to find the sine");
+										thatnumber = Scan.nextDouble();      	
+										
+										System.out.println("Result:" + Math.sin(thatnumber));	  
+										 
+									}
+	        	        			}
+	        	        			else if(operators.equalsIgnoreCase("cos")) {
+	        	        					        	        				
+	        	        				
+	        	        				for(int cos = 0;cos < 1;cos++ ) {
+	        	        					
+	        	        					System.out.println("Enter a number in radians to find the cosine");
+	        	        					thatnumber = Scan.nextDouble();      	  
+	        	        					
+	        	        					System.out.println("Result:" + Math.cos(thatnumber));	  
+	        	        					 
+	        	        				}
+	        	        			}else if(operators.equalsIgnoreCase("tan")) {
+	        	        				
+	        	        				
+										for(int tan = 0;tan < 1;tan++ ) {
+											
+											
+											thatnumber = Scan.nextDouble(); 
+											System.out.println("Enter a number in radians to find the tangent");
+											
+											System.out.println("Result:" + Math.tan(thatnumber));	 
+											 
+										}
+										}
+	        	        			
+	        	        			else {
+	        	        				
+	        	        				 System.out.println("Invalid operation entered");
+	        	        				 
+	        	        			}
+	        	        			
+	        	        			
+	        	        			
+	        	        			
+	        		}		
+	        		
+	        							}else {
+	        		
+	        						System.out.print("Invalid operation entered");
+   				 
+	        						}
+	        						System.out.println("Do you want to start over? (Y/N)");
+	        							y_or_n = Scan.next();
+		 							}while (y_or_n.equalsIgnoreCase("y"));
+	        	
+	        	
+		 							System.out.println("Goodbye");
+	      
+	      
+	      
+	        
+	        
+	        Scan.close();
+
+	}
+	}
